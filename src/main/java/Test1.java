@@ -2,18 +2,35 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
+import java.time.Duration;
 import java.util.List;
 
 public class Test1 {
 
-    @Test
-    public void VerifyLoginWithValidCredentials() {
+  /*  public class DataproviderClass {
+        @DataProvider(name="SearchProvider")
+        public static Object[][] getDataFromDataprovider(){
+            return new Object[][] {
+                    { "standard_user", "secret_sauce" },
+                    { "Krishna", "UK" },
+                    { "Bhupesh", "USA" }
+            };
+        }}*/
+
+
+
+    //@Test
+   /* @Test(dataProvider="SearchProvider", dataProviderClass=DataproviderClass.class)
+    public void VerifyLoginWithValidCredentials(String userName, String password) {
     //public static void main(String[] args) {
 
-        System.setProperty("webdriver.chrome.driver", "C:\\Users\\comp\\Downloads\\chromedriver_win32\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\Users\\Dragoje Janjevic\\Downloads\\chromedriver_win32 (3)\\chromedriver.exe");
         WebDriver driver = new ChromeDriver();
 
         driver.get("https://www.saucedemo.com/");
@@ -22,11 +39,13 @@ public class Test1 {
 
         WebElement inpUserName = driver.findElement(By.id("user-name"));
         inpUserName.click();
-        inpUserName.sendKeys("standard_user");
+        //inpUserName.sendKeys("standard_user");
+        inpUserName.sendKeys(userName);
 
         WebElement inpPassword = driver.findElement(By.id("password"));
         inpPassword.click();
-        inpPassword.sendKeys("secret_sauce");
+        //inpPassword.sendKeys("secret_sauce");
+        inpPassword.sendKeys(password);
 
         WebElement btnLogin = driver.findElement(By.id("login-button"));
         btnLogin.click();
@@ -48,13 +67,13 @@ public class Test1 {
 
         driver.quit();
 
-    }
+    }*/
 
     @Test
     public void VerifyLoginWithInvalidCredentials() {
         //public static void main(String[] args) {
 
-        System.setProperty("webdriver.chrome.driver", "C:\\Users\\comp\\Downloads\\chromedriver_win32\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\Users\\Dragoje Janjevic\\Downloads\\chromedriver_win32 (3)\\chromedriver.exe");
         WebDriver driver = new ChromeDriver();
 
         driver.get("https://www.saucedemo.com/");
@@ -85,7 +104,7 @@ public class Test1 {
     public void VerifyAddProduct() {
         //public static void main(String[] args) {
 
-        System.setProperty("webdriver.chrome.driver", "C:\\Users\\comp\\Downloads\\chromedriver_win32\\chromedriver.exe");
+       System.setProperty("webdriver.chrome.driver", "C:\\Users\\Dragoje Janjevic\\Downloads\\chromedriver_win32 (3)\\chromedriver.exe");
         WebDriver driver = new ChromeDriver();
 
         driver.get("https://www.saucedemo.com/");
@@ -138,7 +157,7 @@ public class Test1 {
     public void VerifyAddFirstProductToCart() {
         //public static void main(String[] args) {
 
-        System.setProperty("webdriver.chrome.driver", "C:\\Users\\comp\\Downloads\\chromedriver_win32\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\Users\\Dragoje Janjevic\\Downloads\\chromedriver_win32 (3)\\chromedriver.exe");
         WebDriver driver = new ChromeDriver();
 
         driver.get("https://www.saucedemo.com/");
@@ -165,6 +184,9 @@ public class Test1 {
 
         WebElement lnkShoopingCartLink = driver.findElement(By.className("shopping_cart_link"));
         lnkShoopingCartLink.click();
+
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        wait.until(ExpectedConditions.visibilityOfElementLocated((By.className("cart_list"))));
 
         WebElement cartList = driver.findElement(By.className("cart_list"));
         List<WebElement> cartItems = cartList.findElements(By.className("cart_item"));
