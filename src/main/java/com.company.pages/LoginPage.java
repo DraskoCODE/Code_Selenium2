@@ -4,16 +4,22 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class LoginPage extends  BasePage {
+public class LoginPage extends BasePage {
 
-    private WebDriver driver;
+    //private WebDriver driver;
     private WebElement inpUserName;
     private WebElement inpPassword;
     private WebElement btnLogin;
     private String url;
 
-    public LoginPage(String url) {
-        super(url);
+   /* public LoginPage(WebDriver driver, String url) {
+        super(driver, url);
+        //super.url = url;
+    }*/
+
+    public LoginPage(WebDriver driver) {
+        super(driver);
+        this.url = super.url;
     }
 
     public LoginPage() {
@@ -30,13 +36,13 @@ public class LoginPage extends  BasePage {
 
 
 
-    public WebDriver getDriver() {
+  /*  public WebDriver getDriver() {
         return driver;
     }
 
     public void setDriver(WebDriver driver) {
         this.driver = driver;
-    }
+    }*/
 
     public WebElement getInpUserName() {
         return driver.findElement(By.id("user-name"));
@@ -63,7 +69,7 @@ public class LoginPage extends  BasePage {
     }*/
 
     public void openPage() {
-        driver.get(this.url);
+        driver.get(url);
         driver.manage().window().maximize();;
     }
 

@@ -45,7 +45,7 @@ public class ProductsPage {
     }
 
     public void closePage() {
-        driver.quit();;
+        driver.close();;
     }
 
 }

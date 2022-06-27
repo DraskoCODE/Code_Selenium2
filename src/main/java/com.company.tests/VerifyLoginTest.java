@@ -6,18 +6,20 @@ import com.company.provider.UserNameProvider;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-public class VerifyLogin {
+public class VerifyLoginTest extends BaseTest {
+
 
     @Test(dataProvider = "UserNameProvider", dataProviderClass = UserNameProvider.class)
     public void VerifyLoginWithValidCredentialsWithParams(String userName) {
 
-        System.setProperty("webdriver.chrome.driver", "C:\\Users\\Dragoje Janjevic\\Downloads\\chromedriver_win32 (3)\\chromedriver.exe");
-        WebDriver driver = new ChromeDriver();
-        LoginPage loginPage = new LoginPage();
-        loginPage.setDriver(driver);
-        loginPage.setUrl("https://www.saucedemo.com/");
+        //System.setProperty("webdriver.chrome.driver", "C:\\Users\\Dragoje Janjevic\\Downloads\\chromedriver_win32 (3)\\chromedriver.exe");
+        //WebDriver driver = new ChromeDriver();
+        LoginPage loginPage = new LoginPage(driver);
+        //loginPage.setDriver(driver);
+        //loginPage.setUrl("https://www.saucedemo.com/");
 
         loginPage.openPage();;
         loginPage.setUserName(userName);
@@ -35,11 +37,11 @@ public class VerifyLogin {
     @Test
     public void VerifyLoginWithValidCredentials() {
 
-        System.setProperty("webdriver.chrome.driver", "C:\\Users\\Dragoje Janjevic\\Downloads\\chromedriver_win32 (3)\\chromedriver.exe");
-        WebDriver driver = new ChromeDriver();
-        LoginPage loginPage = new LoginPage();
-        loginPage.setDriver(driver);
-        loginPage.setUrl("https://www.saucedemo.com/");
+        //System.setProperty("webdriver.chrome.driver", "C:\\Users\\Dragoje Janjevic\\Downloads\\chromedriver_win32 (3)\\chromedriver.exe");
+        //WebDriver driver = new ChromeDriver();
+        LoginPage loginPage = new LoginPage(driver);
+        //loginPage.setDriver(driver);
+        //loginPage.setUrl("https://www.saucedemo.com/");
 
         loginPage.openPage();;
         loginPage.setUserName("standard_user");
@@ -57,13 +59,13 @@ public class VerifyLogin {
     @Test
     public void VerifyLoginWithInValidCredentials() {
 
-        System.setProperty("webdriver.chrome.driver", "C:\\Users\\Dragoje Janjevic\\Downloads\\chromedriver_win32 (3)\\chromedriver.exe");
-        WebDriver driver = new ChromeDriver();
-        LoginPage loginPage = new LoginPage();
-        loginPage.setDriver(driver);
-        loginPage.setUrl("https://www.saucedemo.com/");
+        //System.setProperty("webdriver.chrome.driver", "C:\\Users\\Dragoje Janjevic\\Downloads\\chromedriver_win32 (3)\\chromedriver.exe");
+        //WebDriver driver = new ChromeDriver();
+        LoginPage loginPage = new LoginPage(driver);
+        //loginPage.setDriver(driver);
+        //loginPage.setUrl("https://www.saucedemo.com/");
 
-        loginPage.openPage();;
+        loginPage.openPage();
         loginPage.setUserName("standard_user");
         loginPage.setPassword("secret_saucee");
         loginPage.clickOnLogin();

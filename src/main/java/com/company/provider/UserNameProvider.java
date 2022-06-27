@@ -8,8 +8,8 @@ public class UserNameProvider {
     public static Object[][] getDataFromDataprovider(){
         return new Object[][] {
                 { "standard_user"},
-                { "problem_user" },
-                { "performance_glitch_user" }
+                { "problem_user" }
+                //{ "performance_glitch_user" }
         };
     }
 
