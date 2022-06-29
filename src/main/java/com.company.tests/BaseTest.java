@@ -12,8 +12,8 @@ public class BaseTest {
     protected String url;
 
     @BeforeMethod
-    public void beforeClass() {
-        System.setProperty("webdriver.chrome.driver", "C:\\Users\\Dragoje Janjevic\\Downloads\\chromedriver_win32 (3)\\chromedriver.exe");
+    public void beforeMethod() {
+        System.setProperty("webdriver.chrome.driver", "C:\\Users\\comp\\Downloads\\chromedriver_win32\\chromedriver.exe");
         this.driver = new ChromeDriver();
 
     }

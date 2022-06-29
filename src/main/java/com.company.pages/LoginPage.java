@@ -3,6 +3,8 @@ package com.company.pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class LoginPage extends BasePage {
 
@@ -82,7 +84,12 @@ public class LoginPage extends BasePage {
     }
 
     public void clickOnLogin() {
-        this.getBtnLogin().click();
+        WebElement btnLogin = this.getBtnLogin();
+        WebDriverWait wait = new WebDriverWait(driver, 60);
+        wait.until(ExpectedConditions.elementToBeClickable(btnLogin));
+
+        //this.getBtnLogin().click();
+        btnLogin.click();
     }
 
     public void closePage() {
