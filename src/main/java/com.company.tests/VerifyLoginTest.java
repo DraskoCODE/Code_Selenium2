@@ -14,6 +14,8 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 public class VerifyLoginTest extends BaseTest {
@@ -33,11 +35,13 @@ public class VerifyLoginTest extends BaseTest {
         loginPage.setPassword("secret_sauce");
         loginPage.clickOnLogin();
 
-        ProductsPage productsPage = new ProductsPage();
+        /*ProductsPage productsPage = new ProductsPage();
         productsPage.setDriver(driver);
-        productsPage.setUrl("https://www.saucedemo.com/inventory.html");
+        productsPage.setUrl("https://www.saucedemo.com/inventory.html");*/
+
+        ProductsPage productsPage = new ProductsPage(driver);
         Assert.assertEquals(productsPage.isDisplayed(), true, "Login failed");
-        productsPage.closePage();
+        //productsPage.closePage();
 
     }
 
@@ -55,11 +59,13 @@ public class VerifyLoginTest extends BaseTest {
         loginPage.setPassword("secret_sauce");
         loginPage.clickOnLogin();
 
-        ProductsPage productsPage = new ProductsPage();
+        /*ProductsPage productsPage = new ProductsPage();
         productsPage.setDriver(driver);
-        productsPage.setUrl("https://www.saucedemo.com/inventory.html");
+        productsPage.setUrl("https://www.saucedemo.com/inventory.html");*/
+
+        ProductsPage productsPage = new ProductsPage(driver);
         Assert.assertEquals(productsPage.isDisplayed(), true, "Login failed");
-        productsPage.closePage();
+        //productsPage.closePage();
 
     }
 
@@ -85,13 +91,17 @@ public class VerifyLoginTest extends BaseTest {
         //Vracanje na default vrednost
         //driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 
-        ProductsPage productsPage = new ProductsPage();
+       /* ProductsPage productsPage = new ProductsPage();
         productsPage.setDriver(driver);
-        productsPage.setUrl("https://www.saucedemo.com/inventory.html");
+        productsPage.setUrl("https://www.saucedemo.com/inventory.html");*/
+
+        ProductsPage productsPage = new ProductsPage(driver);
         Assert.assertEquals(productsPage.isDisplayed(), false, "Login failed");
-        productsPage.closePage();
+        //productsPage.closePage();
 
     }
+
+
 
 
 }
