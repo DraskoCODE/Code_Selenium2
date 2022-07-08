@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="Code_Selenium2" />
+        <module name="DemoBlaze" />
       </profile>
     </annotationProcessing>
   </component>

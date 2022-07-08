@@ -3,9 +3,7 @@ package com.company.tests;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterClass;
-import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeMethod;
 
 public class BaseTest {
 
@@ -16,6 +14,8 @@ public class BaseTest {
     public void setup() {
         System.setProperty("webdriver.chrome.driver", "C:\\Users\\comp\\Downloads\\chromedriver_win32\\chromedriver.exe");
         this.driver = new ChromeDriver();
+        //System.setProperty("webdriver.gecko.driver", "C:\\Users\\comp\\Downloads\\geckodriver-v0.31.0-win64\\geckodriver.exe");
+        //this.driver = new FirefoxDriver();
 
     }
 
