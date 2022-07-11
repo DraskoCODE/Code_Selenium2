@@ -12,7 +12,7 @@ public class BaseTest {
 
     @BeforeClass
     public void setup() {
-        System.setProperty("webdriver.chrome.driver", "C:\\Users\\comp\\Downloads\\chromedriver_win32\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\Users\\Dragoje Janjevic\\Downloads\\chromedriver_win32 (4)\\chromedriver.exe");
         this.driver = new ChromeDriver();
         //System.setProperty("webdriver.gecko.driver", "C:\\Users\\comp\\Downloads\\geckodriver-v0.31.0-win64\\geckodriver.exe");
         //this.driver = new FirefoxDriver();
